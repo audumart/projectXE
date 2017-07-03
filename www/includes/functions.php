@@ -68,3 +68,30 @@ function doesUsernameExist($dbconn, $uname) {
 
 		return $result;
 	}
+
+	function adminLogin ($dbconn, $enter){
+
+		# prepared statement
+		$stmt = $dbconn->prepare("SELECT * FROM admin WHERE email=:e");
+
+		#bind params
+		$stmt->bindParam(":e", $enter['email']);
+		$stmt->execute();
+
+		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+		$count = $stmt->rowCount();
+
+		if ($count !== 1 || !password_verify($enter['password'], $row['hash'])) {
+
+			$result[] = false;	
+		} else{
+			$result[] = true;
+			$result[] = $row;
+		}
+		return $result;
+	}
+
+	function redirect($loca){
+		header("Location: " .$loca);
+	}
