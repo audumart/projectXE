@@ -18,23 +18,23 @@
 	if (array_key_exists('save', $_POST)) {
 
 		
-		if (empty($_POST['title'])) {
-			$errors['title'] = "Enter Book Title";
+		if (empty($_POST['member_name'])) {
+			$errors['member_name'] = "Enter Full name";
 		}
-		if (empty($_POST['author'])) {
-			$errors['author'] = "Enter Book Author(s)";
+		if (empty($_POST['member_number'])) {
+			$errors['member_number'] = "Enter Phone number";
 		}
-		if (empty($_POST['price'])) {
-			$errors['price'] = "Enter Book Price";
+		if (empty($_POST['member_service'])) {
+			$errors['member_service'] = "Enter field specialized in";
 		}
-		if (empty($_POST['year'])) {
-			$errors['year'] = "Enter Year of Publication";
+		if (empty($_POST['member_email'])) {
+			$errors['member_email'] = "Enter email address";
 		}
 		
 		if (empty($errors)) {
 			$clean = array_map('trim', $_POST);
 
-			addProduct($conn, $clean);
+			addTeamMember($conn, $clean);
 		}
 	}
 
@@ -70,13 +70,6 @@
 				</div>
 
 				<div>
-				<?php
-			$display = displayErrors($errors,'member_service');
-			echo $display;
-			?>
-					
-					<input type="text" name="member_service" placeholder="Enter service rendered">
-				</div>
 
 				<div>
 				<?php
