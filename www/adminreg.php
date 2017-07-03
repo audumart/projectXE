@@ -97,7 +97,7 @@
       $display = displayErrors($errors,'fname');
       echo $display;
       ?>
-        <label>first name:</label>
+       
         <input type="text" name="fname" placeholder="first name">
       </div>
       <div>
@@ -105,7 +105,7 @@
       $display = displayErrors($errors,'lname');
       echo $display;
       ?>
-        <label>last name:</label>
+        
         <input type="text" name="lname" placeholder="last name">
       </div>
       <div>
@@ -113,7 +113,7 @@
       $display = displayErrors($errors,'uname');
       echo $display;
       ?>
-        <label>last Name:</label>
+       
         <input type="text" name="uname" placeholder="username">
       </div>
 
@@ -122,7 +122,7 @@
       $display = displayErrors($errors,'email');
       echo $display;
       ?>
-        <label>Email:</label>
+        
         <input type="text" name="email" placeholder="email">
       </div>
       <div>
@@ -131,7 +131,7 @@
       $display = displayErrors($errors,'password');
       echo $display;
       ?>
-        <label>Password:</label>
+       
         <input type="password" name="password" placeholder="password">
       </div>
 
@@ -139,7 +139,7 @@
         <?php
       if (isset($errors['pword'])) { echo '<span class="err">'.$errors['pword'].'</span>'; }
       ?>
-        <label>Confirm password:</label>
+      
         <input type="password" name="pword" placeholder="password">
       </div>
 
@@ -151,9 +151,5 @@
 
 </form>
   </div>
-  </div>
-</html>
-
-
   </div>
 </html>
