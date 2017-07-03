@@ -1,13 +1,11 @@
 html,
 body {
-    background-color: #ffffff;
-    font-size: 14px;
+    background-color: #000000;
+    font-size: 16px;
     color: #565656;
     width: 100%;
     padding: 0;
-    margin-left: 20%;
-    margin-right: 20%;
-    font-family: 'open_sansregular';
+    font-family: "Helvetica Neue", Helvetica, sans-serif
     font-weight: 300;
 }
 /*==========================================
@@ -49,7 +47,7 @@ img {
     user-drag: none;
 }
 a {
-    font-size: 12px;
+    font-size: 20px;
 }
 a:hover,
 a:active,
@@ -130,20 +128,20 @@ input[type="color"],
 h1,
 h2,
 h3 {
-    font-family: 'Lane', sans-serif;
+    font-family: "Helvetica Neue", Helvetica, sans-serif
     font-weight: 300;
     margin: 0;
 }
 h4,
 h5 {
-    font-family: 'roboto', sans-serif;
+    font-family: "Helvetica Neue", Helvetica, sans-serif
     font-weight: 300;
     margin: 0;
     line-height: 2rem;
 }
 h1 {
-    font-size: 3rem;
-    font-weight: 300;
+    font-size: 50px;
+    font-weight: bold;
 	line-height:inherit;
 }
 h2 {
@@ -185,7 +183,7 @@ p:last-child {
 .home-wrap h5,
 .home-wrap p {
     color: #ffffff;
-    font-family: 'roboto', sans-serif;
+    font-family: "Helvetica Neue", Helvetica, sans-serif
 }
 .text {
     color: #333333;
@@ -232,7 +230,7 @@ footer {
 section .subtitle h5 {
     margin-top: 10px;
     font-size: 1.3rem;
-    font-family: 'roboto', sans-serif;
+    font-family: "Helvetica Neue", Helvetica, sans-serif
 }
 .parallax-section {
     max-width: 100%;
@@ -276,7 +274,7 @@ section:nth-of-type(odd) {
 }
 
 .overlay2-img {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.8);
     width: 100%;
     padding-top: 100px;
     padding-bottom: 250px;
@@ -397,7 +395,7 @@ input:-ms-input-placeholder {
 
 .home-bg{
     background: url(../images/header1.jpg) no-repeat center top fixed;
-	min-height:700px;
+	   height:600px;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -454,6 +452,7 @@ input:-ms-input-placeholder {
 .navbar-brand  img{
 	margin-top: 15px;
 	padding-left: 15px;
+
 }
 .navbar-nav {
     padding-top: 15px;
@@ -470,7 +469,7 @@ input:-ms-input-placeholder {
 
 .mainmenu .navbar-nav li a{
 	text-transform:uppercase;
-	font-size:12px;
+	font-size:16px;
 	color:#ffffff;
 }
 
@@ -481,7 +480,7 @@ input:-ms-input-placeholder {
 
 .mainmenu .navbar-nav li a i{
 	color:#cf4acc;
-	font-size:14px;
+	font-size:16px;
 	transition:.3s ease-in-out;
 }
 .mainmenu .navbar-nav li a i:hover{
@@ -491,7 +490,7 @@ input:-ms-input-placeholder {
 
 .home-bg .header-details{
 	padding-top:220px;
-	color:#ffffff;
+	color:#000000;
 }
 
 .about-bg .header-details{
@@ -511,7 +510,7 @@ input:-ms-input-placeholder {
 
 .home-bg .header-details h1{
 	text-transform:uppercase;
-	font-family: 'montserratbold';
+	font-family: "Helvetica Neue", Helvetica, sans-serif
 	font-size:48px;
 	margin-bottom:20px;
 	line-height: 55px;
@@ -519,7 +518,7 @@ input:-ms-input-placeholder {
 
 .about-bg .header-details h1{
     text-transform:uppercase;
-    font-family: 'montserratbold';
+    font-family: "Helvetica Neue", Helvetica, sans-serif
     font-size:48px;
     margin-bottom:20px;
     line-height: 55px;
@@ -527,7 +526,7 @@ input:-ms-input-placeholder {
 
 .port-bg .header-details h1{
     text-transform:uppercase;
-    font-family: 'montserratbold';
+    font-family: "Helvetica Neue", Helvetica, sans-serif
     font-size:48px;
     margin-bottom:20px;
     line-height: 55px;
@@ -535,7 +534,7 @@ input:-ms-input-placeholder {
 
 .works-bg .header-details h1{
     text-transform:uppercase;
-    font-family: 'montserratbold';
+    font-family: "Helvetica Neue", Helvetica, sans-serif
     font-size:48px;
     margin-bottom:20px;
     line-height: 55px;
@@ -562,8 +561,8 @@ input:-ms-input-placeholder {
 }
 
 .home-bg .header-details p{
-	font-size:20px;
-	color:rgba(166, 166, 166, 1);
+	font-size:30px;
+	color:#00b3d2;
 }
 
 
