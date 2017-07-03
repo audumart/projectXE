@@ -86,9 +86,9 @@
      
    
 
-    <div class="clearfix">
+    
       <button type="submit" name = "register" class="loginbtn" value="login">Login</button>
-    </div>
+    
 
 </form>
     <h4 class="jumpto">Don't have an account? <a href="adminreg.php">register</a></h4>
