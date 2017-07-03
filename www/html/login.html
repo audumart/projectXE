@@ -19,18 +19,29 @@
 <form action="/action_page.php">
   <div class="container1">
 
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <div class="wrapper">
+    <h1 id="register-label">Admin Login</h1>
+    <hr>
+    <form id="register"  action ="adminlogin.php" method ="POST">
+      <div>
+      
+        <label>email:</label>
+        <input type="text" name="email" placeholder="email" required>
+      </div>
+      <div>
+      
+        <label>password:</label>
+        <input type="password" name="password" placeholder="password" required>
+      </div>
 
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+      <input type="submit" name="register" class = "loginbtn" value="login">
+    </form>
 
-    <input type="checkbox" checked="checked"> Remember me
-    <p>Not yet a member? Click here to <a href="../html/register.html">Sign Up</a>.</p>
+    <h4 class="jumpto">Don't have an account? <a href="adminreg.php">register</a></h4>
+  </div>
 
-    <div class="clearfix">
-      <button type="submit" class="loginbtn">Login</button>
-    </div>
+
+   
   </div>
 </form>
 
