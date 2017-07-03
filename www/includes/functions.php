@@ -96,22 +96,68 @@ function doesUsernameExist($dbconn, $uname) {
 		header("Location: " .$loca);
 	}
 
-	function UploadFile($file, $name, $uploadDir) {
-			$data = [];
-			$rnd = rand (0000000000,9999999999);
-			$strip_name = str_replace ("","",$file[$name]['name']);
-			$filename = $rnd.$strip_name;
-			$destination = $uploadDir .$filename;
-			if (!move_uploaded_file($file[$name]['tmp_name'], $destination)){
-		$data[] = false;
-		} else {
-		$data[] = true;
-		$data[] = $destination;
-		}
-	return $data;
-}
+	function fileUpload($up){
 
-	function addTeamMember($dbconn, $add, $dest){
+		$ext = ["image/jpg", "image/jpeg", "image/png"];
+
+		if (!in_array($_FILES['pic']['type'], $ext)) {
+		$errors[] = "invalid file type";
+	}
+
+	# generate random number to append
+	$rnd = rand(0000000000, 9999999999);
+
+	# strip filename for spaces
+	$strip_name = str_replace(" ", "_", $_FILES['pic']['name']);
+
+	$filename = $rnd.$strip_name;
+	$destination = 'uploads/'.$filename;
+
+	# check file size...
+	if ($_FILES['pic']['size'] > MAX_FILE_SIZE) {
+		$errors[] = "file size exceeds maximum. maximum:". MAX_FILE_SIZE;
+	}
+
+	if(!move_uploaded_file($_FILES['pic']['tmp_name'], $destination)){
+		$errors[] = "file upload failed";
+	}
+	# check extension
+	if (!in_array($_FILES['pic']['type'], $ext)) {
+		$errors[] = "invalid file type";
+	}
+
+
+	}
+
+	function addTeamMember($dbconn, $add, $destination){
+
+		$ext = ["image/jpg", "image/jpeg", "image/png"];
+
+		if (!in_array($_FILES['pic']['type'], $ext)) {
+		$errors[] = "invalid file type";
+	}
+
+	# generate random number to append
+	$rnd = rand(0000000000, 9999999999);
+
+	# strip filename for spaces
+	$strip_name = str_replace(" ", "_", $_FILES['pic']['name']);
+
+	$filename = $rnd.$strip_name;
+	$destination = 'uploads/'.$filename;
+
+	# check file size...
+	if ($_FILES['pic']['size'] > MAX_FILE_SIZE) {
+		$errors[] = "file size exceeds maximum. maximum:". MAX_FILE_SIZE;
+	}
+
+	if(!move_uploaded_file($_FILES['pic']['tmp_name'], $destination)){
+		$errors[] = "file upload failed";
+	}
+	# check extension
+	if (!in_array($_FILES['pic']['type'], $ext)) {
+		$errors[] = "invalid file type";
+	}
 		
 		$state = $dbconn->prepare("SELECT service_id FROM service WHERE service_name = :sn");
 		$state->bindParam(":sn", $add['service']);
@@ -132,7 +178,7 @@ function doesUsernameExist($dbconn, $uname) {
 			':mnu' => $add['member_number'],
 			'si' => $service_id,
 			':pr' => $add['member_email'],
-			':fi' => $dest
+			':fi' => $destination
 
 				];
 

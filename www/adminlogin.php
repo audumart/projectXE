@@ -65,7 +65,7 @@
 </div>
 
 
-<form action="adminhome.php" method="POST">
+
   <div class="container1">
 
     <div class="wrapper">

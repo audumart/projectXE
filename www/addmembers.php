@@ -13,11 +13,7 @@
 
 	include 'includes/view.php';
 
-	$destination = "";
 
-	define("MAX_FILE_SIZE", "2097152");
-
-	$ext = ["image/jpg", "image/jpeg", "image/png"];
 
 
 
@@ -27,15 +23,6 @@
 
 		if(empty($_FILES['member']['name'])) {
 			$errors[] = "please choose a file";
-			}
-
-			#  check file size..
-		if($_FILES['member']['size'] > MAX_FILE_SIZE) {
-			$errors[] = "file size exceeds maximum. maximum: ". MAX_FILE_SIZE;
-			}
-
-		if(!in_array($_FILES['member']['type'], $ext)) {
-			$errors[] = "invalid file type";
 			}
 
 		
@@ -51,12 +38,7 @@
 			$errors['member_email'] = "Enter email address";
 		}
 
-		$chk = UploadFile($_FILES, 'member', 'uploads/');
- 			if($chk[0]) {
- 				$destination = $chk[1];
- 			} else{
- 				$errors['member'] = "file uploadfailed";
- 			}
+	
 
 		
 		if (empty($errors)) {
