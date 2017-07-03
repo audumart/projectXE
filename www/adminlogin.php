@@ -90,14 +90,11 @@
       <button type="submit" name = "register" class="loginbtn" value="login">Login</button>
     
 
-</form>
-    <h4 class="jumpto">Don't have an account? <a href="adminreg.php">register</a></h4>
-  </div>
+<h4 class="jumpto">Don't have an account? <a href="adminreg.php">register</a></h4>
 
-
-   
-  </div>
 </form>
+
+</div>
 
   </div>
 </html>
