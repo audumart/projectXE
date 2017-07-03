@@ -51,7 +51,7 @@
 			$errors['member_email'] = "Enter email address";
 		}
 
-		$chk = fileUpload($_FILES, 'member', 'uploads/');
+		$chk = UploadFile($_FILES, 'member', 'uploads/');
  			if($chk[0]) {
  				$destination = $chk[1];
  			} else{
