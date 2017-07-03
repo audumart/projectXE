@@ -121,11 +121,13 @@ function doesUsernameExist($dbconn, $uname) {
 		$service_id = $row['service_id'];
 		
 
-		$stmt = $dbconn->prepare("INSERT INTO team(member_name, member_number, service_id, member_email, file_path)
+		$stmt = $dbconn->prepare("INSERT INTO team(member_name, member_number, service_id, member_email, filepath)
 											VALUES(:mn, :mnu, :si, :me, :fi)");
 
-		
-				$data = [
+					$data = [
+
+
+
 			'mn' => $add['member_name'],
 			':mnu' => $add['member_number'],
 			'si' => $service_id,
