@@ -18,6 +18,7 @@
 
 
 <div class="wrapper">
+  <div class="container">
     <h1 id="register-label">Admin Register</h1>
     <hr>
     <form id="register"  action ="adminreg.php" method ="POST">
@@ -34,15 +35,15 @@
       $display = displayErrors($errors,'lname');
       echo $display;
       ?>
-        <label>last name:</label> 
+        <label>last name:</label>
         <input type="text" name="lname" placeholder="last name">
       </div>
-
+      <div>
       <?php
       $display = displayErrors($errors,'uname');
       echo $display;
       ?>
-        <label>last name:</label> 
+        <label>last name:</label>
         <input type="text" name="uname" placeholder="username">
       </div>
 
@@ -55,6 +56,7 @@
         <input type="text" name="email" placeholder="email">
       </div>
       <div>
+      <div>
       <?php
       $display = displayErrors($errors,'password');
       echo $display;
@@ -62,20 +64,22 @@
         <label>password:</label>
         <input type="password" name="password" placeholder="password">
       </div>
- 
-      <div><?php
+
+      <div>
+        <?php
       if (isset($errors['pword'])) { echo '<span class="err">'.$errors['pword'].'</span>'; }
       ?>
-        <label>confirm password:</label>  
+        <label>confirm password:</label>
         <input type="password" name="pword" placeholder="password">
       </div>
 
       <button><input type="submit" class="registerbtn" name="register" value="register"></button>
     </form>
 
+
     <h4 class="jumpto">Have an account? <a href="adminlogin.php">login</a></h4>
 
 </form>
-
+  </div>
   </div>
 </html>
