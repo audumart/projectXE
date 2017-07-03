@@ -7,8 +7,9 @@
 
 	include 'includes/functions.php';
 
-	include 'includes/view.php';
+    include 'includes/view.php';
 
+	
 
 
 
@@ -25,7 +26,7 @@
 
         <link rel="stylesheet" href="../css/bootstrap.min.css">
 
-		<!--For font-awesome css-->
+        <!--For font-awesome css-->
         <link rel="stylesheet" href="../css/font-awesome.min.css" />
 
         <!--Theme custom css -->
