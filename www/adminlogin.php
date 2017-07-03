@@ -68,7 +68,7 @@
 </div>
 
 
-
+<form action="adminlogin.php" method="POST">
   <div class="container1">
 
     <div class="wrapper">
@@ -76,29 +76,26 @@
     <hr>
     <form id="register"  action ="adminlogin.php" method ="POST">
       <div>
-      
-        <label>email:</label>
+
+        <label>Email:</label>
         <input type="text" name="email" placeholder="email" required>
       </div>
       <div>
-     
-      
-        <label>password:</label>
+
+        <label>Password:</label>
         <input type="password" name="password" placeholder="password" required>
       </div>
 
-     
-   
+      <input type="submit" name="register" class = "loginbtn" value="login">
+    </form>
 
-    
-      <button type="submit" name = "register" class="loginbtn" value="login">Login</button>
-    
+    <h4 class="jumpto">Don't have an account? <a href="adminreg.php">Register</a></h4>
+  </div>
 
-<h4 class="jumpto">Don't have an account? <a href="adminreg.php">register</a></h4>
 
+
+  </div>
 </form>
-
-</div>
 
   </div>
 </html>
