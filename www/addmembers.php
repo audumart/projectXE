@@ -13,9 +13,30 @@
 
 	include 'includes/view.php';
 
+	$destination = "";
+
+	define("MAX_FILE_SIZE", "2097152");
+
+	$ext = ["image/jpg", "image/jpeg", "image/png"];
+
+
+
 	$errors = [];
 
 	if (array_key_exists('save', $_POST)) {
+
+		if(empty($_FILES['member']['name'])) {
+			$errors[] = "please choose a file";
+			}
+
+			#  check file size..
+		if($_FILES['member']['size'] > MAX_FILE_SIZE) {
+			$errors[] = "file size exceeds maximum. maximum: ". MAX_FILE_SIZE;
+			}
+
+		if(!in_array($_FILES['member']['type'], $ext)) {
+			$errors[] = "invalid file type";
+			}
 
 		
 		if (empty($_POST['member_name'])) {
@@ -24,17 +45,24 @@
 		if (empty($_POST['member_number'])) {
 			$errors['member_number'] = "Enter Phone number";
 		}
-		if (empty($_POST['member_service'])) {
-			$errors['member_service'] = "Enter field specialized in";
-		}
+		
+		
 		if (empty($_POST['member_email'])) {
 			$errors['member_email'] = "Enter email address";
 		}
+
+		$chk = UploadFile($_FILES, 'member', 'uploads/');
+ 			if($chk[0]) {
+ 				$destination = $chk[1];
+ 			} else{
+ 				$errors['member'] = "file uploadfailed";
+ 			}
+
 		
 		if (empty($errors)) {
 			$clean = array_map('trim', $_POST);
 
-			addTeamMember($conn, $clean);
+			addTeamMember($conn, $clean, $destination);
 		}
 	}
 
@@ -45,7 +73,7 @@
 
 <div class="wrapper">
 		<div id="stream">
-			<form id="register" method="POST" enctype="multipart/form-data">
+			<form action="addmembers.php" method="POST" enctype="multipart/form-data">
 				<p>Choose picture</p>
 				<div>
 					<input type="file" name="member">
@@ -79,6 +107,20 @@
 					
 					<input type="text" name="member_email" placeholder="Enter email address">
 				</div>
+
+					<div>
+					<label>Select Service</label>
+					<select name="Service">
+						<option>Select service</option>
+						<?php
+						$stmt = $conn->prepare("SELECT * FROM service");
+						$stmt->execute();
+						while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) { ?>
+						<option value="<?php echo $row['service_name']?>"> <?php echo $row['service_name'] ?> </option>
+						<?php } ?>
+					</select>
+				</div>
+
 
 				
 

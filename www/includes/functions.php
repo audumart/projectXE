@@ -96,65 +96,41 @@ function doesUsernameExist($dbconn, $uname) {
 		header("Location: " .$loca);
 	}
 
-	function addTeamMember($dbconn, $add){
-		define('MAX_FILE_SIZE', '2097152');
-
-		$ext = ["image/jpg", "image/jpeg", "image/png"];
-
-		$rnd = rand(0000000000, 9999999999);
-
-		$strip_name = str_replace(" ", " _ ", $_FILES['member']['name']);
-
-		$filename = $rnd.$strip_name;
-		$destination = 'uploads/'.$filename;
-
-			if (array_key_exists('save', $_POST)) {
-
-				$errors = [];
-
-			
-			if (empty($_FILES['member']['name'])) {
-				$errors[] = "Please choose a file";
-			}
-
-		if ($_FILES['member']['size'] > MAX_FILE_SIZE ) {
-			$errors[] = "file size exceeds maximum. maximum: ". MAX_FILE_SIZE;
+	function UploadFile($file, $name, $uploadDir) {
+			$data = [];
+			$rnd = rand (0000000000,9999999999);
+			$strip_name = str_replace ("","",$file[$name]['name']);
+			$filename = $rnd.$strip_name;
+			$destination = $uploadDir .$filename;
+			if (!move_uploaded_file($file[$name]['tmp_name'], $destination)){
+		$data[] = false;
+		} else {
+		$data[] = true;
+		$data[] = $destination;
 		}
-		if (!in_array($_FILES['member']['type'], $ext)) {
-			$errors[] = "invalid file type";
-		}
-		if (empty($errors)) {
-			if (!move_uploaded_file($_FILES['member']['tmp_name'], $destination)) {
-				$errors[] = "file upload failed";
-			}
-		echo "done";
-		}
-		else{
-			foreach ($errors as $err) {
-				echo $err. '</br>';
-			}
-		}
-	}
+	return $data;
+}
+
+	function addTeamMember($dbconn, $add, $dest){
 		
-		$stmt = $dbconn->prepare("SELECT service_id FROM service WHERE service_name = :sn");
-		$stmt->bindParam(":sn", $add['service']);
-		$stmt->execute();
+		$state = $dbconn->prepare("SELECT service_id FROM service WHERE service_name = :sn");
+		$state->bindParam(":sn", $add['service']);
+		$state->execute();
 
-		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		$row = $state->fetch(PDO::FETCH_ASSOC);
 		$service_id = $row['service_id'];
 		
 
 		$stmt = $dbconn->prepare("INSERT INTO team(member_name, member_number, service_id, member_email, file_path)
-											VALUES(:mn, :mnu, :ms, :me, :fi)");
+											VALUES(:mn, :mnu, :si, :me, :fi)");
+
 		
 				$data = [
 			'mn' => $add['member_name'],
 			':mnu' => $add['member_number'],
 			'si' => $service_id,
-			':ms' => $add['member_service'],
 			':pr' => $add['member_email'],
-			'si' => $service_id,
-			':fi' => $destination
+			':fi' => $dest
 
 				];
 
