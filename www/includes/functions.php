@@ -11,7 +11,7 @@
 
  	':fn' => $input['fname'],
  	':ln' => $input['lname'],
- 	':ln' => $input['uname'],
+ 	':un' => $input['uname'],
  	':e' => $input['email'],
  	':h' => $hash
 
