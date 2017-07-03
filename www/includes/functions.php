@@ -96,7 +96,7 @@ function doesUsernameExist($dbconn, $uname) {
 		header("Location: " .$loca);
 	}
 
-	function UploadFile($file, $name, $uploadDir) {
+	function fileUpload($file, $name, $uploadDir) {
 			$data = [];
 			$rnd = rand (0000000000,9999999999);
 			$strip_name = str_replace ("","",$file[$name]['name']);
@@ -124,17 +124,15 @@ function doesUsernameExist($dbconn, $uname) {
 		$stmt = $dbconn->prepare("INSERT INTO team(member_name, member_number, service_id, member_email, filepath)
 											VALUES(:mn, :mnu, :si, :me, :fi)");
 
-					$data = [
+			$data = [
 
+		$stmt->bindParam(":mn", $add['member_name']),
+		$stmt->bindParam(":mnu", $add['member_number']),
+		$stmt->bindParam("si", $add['service_id']),
+		$stmt->bindParam(":me", $add['member_email']),
+		$stmt->bindParam(":fi", $add['dest']),
 
-
-			'mn' => $add['member_name'],
-			':mnu' => $add['member_number'],
-			'si' => $service_id,
-			':pr' => $add['member_email'],
-			':fi' => $dest
-
-				];
+		];
 
 			$stmt->execute($data);
 	}

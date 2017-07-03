@@ -53,15 +53,12 @@
 	}
 }
 ?>
-
-	
-
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Administrator Login</title>
-        <link rel="stylesheet" href="../css/style.css" type="text/css" />
+        <link rel="stylesheet" href="../css/regstyle.css" type="text/css" />
 </head>
   <div class="container">
   <!--<img src="../images/projectXE.png" alt="logo" width="20%" height="5%">-->
@@ -76,29 +73,30 @@
     <hr>
     <form id="register"  action ="adminlogin.php" method ="POST">
       <div>
-      
-        <label>email:</label>
+
+        <label>Email:</label>
         <input type="text" name="email" placeholder="email" required>
       </div>
       <div>
-     
-      
-        <label>password:</label>
+
+        <label>Password:</label>
         <input type="password" name="password" placeholder="password" required>
       </div>
+      <div class="clearfix">
+      <button type="submit" name="register" class = "loginbtn" value="login">Login</button>
+    </div>
+    </form>
 
-     
-   
+    <h4 class="jumpto">Don't have an account? <a href="adminreg.php">Register</a></h4>
+  </div>
 
-    
-      <button type="submit" name = "register" class="loginbtn" value="login">Login</button>
-    
 
-<h4 class="jumpto">Don't have an account? <a href="adminreg.php">register</a></h4>
 
+  </div>
 </form>
-
-</div>
 
   </div>
 </html>
+
+	
+

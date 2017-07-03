@@ -15,17 +15,24 @@
 
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Home</title>
-</head>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Project XE</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-		
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
 
-		
-	
+		<!--For font-awesome css-->
+        <link rel="stylesheet" href="../css/font-awesome.min.css" />
 
-</body>
+        <!--Theme custom css -->
+        <link rel="stylesheet" href="../css/mainstyle.css">
+
+        <!--Theme Responsive css-->
+        <link rel="stylesheet" href="../css/responsive.css" />
+    </head>
+
 </html>
