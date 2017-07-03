@@ -136,25 +136,78 @@ function doesUsernameExist($dbconn, $uname) {
 		}
 	}
 		
+		$stmt = $dbconn->prepare("SELECT service_id FROM service WHERE service_name = :sn");
+		$stmt->bindParam(":sn", $add['service']);
+		$stmt->execute();
 
+		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		$service_id = $row['service_id'];
 		
 
-		$stmt = $dbconn->prepare("INSERT INTO team(member_name, member_number, member_service, member_email, file_path)
+		$stmt = $dbconn->prepare("INSERT INTO team(member_name, member_number, service_id, member_email, file_path)
 											VALUES(:mn, :mnu, :ms, :me, :fi)");
-		$stmt->bindParam(':mn', $add['member_name']);
-		$stmt->bindParam(':mnu', $add['member_number']);
-		$stmt->bindParam(':mnu', $add['member_service']);
-		$stmt->bindParam(':mnu', $add['member_email']);
-		$stmt->bindParam(':fi',$destination);
-		$stmt->execute();
-		$data = [
+		
+				$data = [
 			'mn' => $add['member_name'],
 			':mnu' => $add['member_number'],
+			'si' => $service_id,
 			':ms' => $add['member_service'],
 			':pr' => $add['member_email'],
+			'si' => $service_id,
 			':fi' => $destination
 
 				];
 
 			$stmt->execute($data);
 	}
+
+	function insertService($dbconn, $in){
+
+		$stmt = $dbconn->prepare("INSERT INTO service(service_name) VALUES(:s)");
+
+		$stmt->bindParam(":s", $in['service']);
+		$stmt->execute();
+	}
+
+	function showService($dbconn){
+		$stmt = $dbconn->prepare("SELECT * FROM service");
+		$stmt->execute();
+		$result = "";
+		
+
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$service_id = $row['service_id'];
+			$service_name = $row['service_name'];
+
+			$result .="<tr>";
+			$result .="<td>".$service_id."</td>";
+			$result .="<td>".$service_name."</td>";
+
+			$result .= "<td><a href='services.php?action=edit&service_id=$service_id&service_name=$service_name'>edit</a></td>";
+			$result .= "<td><a href='services.php?act=delete&service_id=$service_id'>delete</a><td>";
+			$result .= "<tr>";
+
+		}
+		return $result;
+	}
+
+	function editService($dbconn, $input){
+
+		$stmt = $dbconn->prepare("UPDATE service SET service_name = :c WHERE service_id = :ci");
+		$stmt->bindParam(":c", $input['service_name']);
+		$stmt->bindParam(":ci", $input['service_id']);
+		$stmt->execute();
+		$success = "service edited!";
+		header("Location:services.php?success=$success");
+	}
+
+	function deleteService($dbconn, $del){
+
+		$stmt = $dbconn->prepare("DELETE FROM service WHERE service_id = :si");
+		
+		$stmt->bindParam(":si", $del);
+		$stmt->execute();
+		$success = "service deleted!";
+		header("Location:services.php?success=$success");
+	}
+
