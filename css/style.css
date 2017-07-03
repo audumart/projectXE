@@ -1,0 +1,70 @@
+body, html {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;    background: #f0f0f0;
+  background: url(../images/loginbg.png) no-repeat center fixed;
+  color: #f0f0ff;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #00DBDF;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #DCDF00;
+}
+
+.cancelbtn,.signupbtn {
+    float: left;
+    width: 50%;
+}
+
+.loginbtn {
+  float:left;
+  width: 100%
+}
+
+.container1 {
+    padding: 16px;
+    width: 400px;
+  margin: 5%;
+
+  position: relative;
+  text-align: left;
+}
+
+.container {
+    padding: 16px;
+    width: 500px;
+  margin: auto;
+
+  position: relative;
+  text-align: left;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+        width: 100%;
+    }
+}
