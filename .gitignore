@@ -1,0 +1,7 @@
+.vagrant/
+/www/phpmyadmin
+/www/includes/db.php
+/www/uploads
+/www/style
+.DS_Store/
+../.DS_Store/
