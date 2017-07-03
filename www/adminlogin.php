@@ -47,23 +47,57 @@
 ?>
 
 	
-	<div class="wrapper">
-		<h1 id="register-label">Admin Login</h1>
-		<hr>
-		<form id="register"  action ="adminLogin.php" method ="POST">
-			<div>
-			
-				<label>email:</label>
-				<input type="text" name="email" placeholder="email">
-			</div>
-			<div>
-			
-				<label>password:</label>
-				<input type="password" name="password" placeholder="password">
-			</div>
+	<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 
-			<input type="submit" name="register" value="login">
-		</form>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Administrator Login</title>
+        <link rel="stylesheet" href="../css/style.css" type="text/css" />
+</head>
+  <div class="container">
+  <!--<img src="../images/projectXE.png" alt="logo" width="20%" height="5%">-->
+</div>
 
-		<h4 class="jumpto">Don't have an account? <a href="adminreg.php">register</a></h4>
-	</div>
+
+<form action="adminhome.php" method="POST">
+  <div class="container1">
+
+    <div class="wrapper">
+    <h1 id="register-label">Admin Login</h1>
+    <hr>
+    <form id="register"  action ="adminlogin.php" method ="POST">
+      <div>
+      
+        <label>email:</label>
+        <input type="text" name="email" placeholder="email" required>
+      </div>
+      <div>
+      
+        <label>password:</label>
+        <input type="password" name="password" placeholder="password" required>
+      </div>
+
+     
+   
+
+    <div class="clearfix">
+      <button type="submit" name = "register" class="loginbtn" value="login">Login</button>
+    </div>
+
+</form>
+    <h4 class="jumpto">Don't have an account? <a href="adminreg.php">register</a></h4>
+  </div>
+
+
+   
+  </div>
+</form>
+
+  </div>
+</html>
