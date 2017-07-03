@@ -13,12 +13,12 @@
 
 	
 
-	
+	$errors = [];
 
 	if (array_key_exists('register', $_POST)) {
 		# error caching
 
-		$errors = [];
+		
 		
 		
 
@@ -30,6 +30,8 @@
 		if (empty('password')) {
 			$errors['password'] = "please enter your password";
 		}
+
+		
 
 	
 
