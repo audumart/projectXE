@@ -17,15 +17,21 @@
 
 	if (array_key_exists('register', $_POST)) {
 		# error caching
+
 		$errors = [];
+		
 		
 
 		if (empty('email')) {
 			$errors['email'] = "please enter your email";
 		}
+
+
 		if (empty('password')) {
 			$errors['password'] = "please enter your password";
 		}
+
+	
 
 		if (empty($errors)) {
 			# select from db
@@ -47,11 +53,6 @@
 ?>
 
 	
-	<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 
 <html>
     <head>
@@ -65,7 +66,7 @@
 </div>
 
 
-<form action="adminhome.php" method="POST">
+
   <div class="container1">
 
     <div class="wrapper">
@@ -78,6 +79,7 @@
         <input type="text" name="email" placeholder="email" required>
       </div>
       <div>
+     
       
         <label>password:</label>
         <input type="password" name="password" placeholder="password" required>
