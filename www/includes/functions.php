@@ -112,8 +112,7 @@ function doesUsernameExist($dbconn, $uname) {
 }
 
 	function addTeamMember($dbconn, $add, $dest){
-		
-		$state = $dbconn->prepare("SELECT service_id FROM service WHERE service_name = :sn");
+		$state = $dbconn->prepare("SELECT service_id FROM service WHERE service_name=:sn");
 		$state->bindParam(":sn", $add['service']);
 		$state->execute();
 
@@ -131,7 +130,7 @@ function doesUsernameExist($dbconn, $uname) {
 			'mn' => $add['member_name'],
 			':mnu' => $add['member_number'],
 			'si' => $service_id,
-			':pr' => $add['member_email'],
+			':me' => $add['member_email'],
 			':fi' => $dest
 
 				];
