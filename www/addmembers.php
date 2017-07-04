@@ -109,8 +109,7 @@
 				</div>
 
 					<div>
-					<label>Select Service</label>
-					<select name="Service">
+					<select name="service">
 						<option>Select service</option>
 						<?php
 						$stmt = $conn->prepare("SELECT * FROM service");
