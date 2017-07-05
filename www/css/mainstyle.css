@@ -226,6 +226,7 @@ Section
 }
 footer {
     padding:40px 0;
+    background-color: #ffffff;
 }
 section .subtitle h5 {
     margin-top: 10px;
