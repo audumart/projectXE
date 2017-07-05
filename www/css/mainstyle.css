@@ -396,7 +396,7 @@ input:-ms-input-placeholder {
 
 .home-bg{
     background: url(../images/header1.jpg) no-repeat center top fixed;
-	   height:600px;
+	   height:400px;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -490,7 +490,7 @@ input:-ms-input-placeholder {
 
 
 .home-bg .header-details{
-	padding-top:220px;
+	padding-top:50px;
 	color:#000000;
 }
 
@@ -760,7 +760,7 @@ input:-ms-input-placeholder {
 }
 .team .team-info h5{
 	font-size:14px;
-	color:#cf4acc;
+	color:#f5e40f;
 	margin-bottom:0;
 	font-weight:bold;
 }
