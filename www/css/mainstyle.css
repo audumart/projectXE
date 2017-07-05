@@ -471,7 +471,7 @@ input:-ms-input-placeholder {
 .mainmenu .navbar-nav li a{
 	text-transform:uppercase;
 	font-size:16px;
-	color:#3f968e;
+	color:#2b72b7;
 }
 
 .mainmenu.menu-bg{
@@ -543,7 +543,7 @@ input:-ms-input-placeholder {
 
 .home-bg .header-details h1 i{
 	font-size:7px;
-	color:#cf4acc;
+	color:#2b72b7;
 }
 
 .about-bg .header-details h1 i{
@@ -728,7 +728,7 @@ input:-ms-input-placeholder {
 
 .team-heading h1 i{
 	font-size:7px;
-	color:#cf4acc;
+	color:#ffec00;
 }
 .team-heading h5{
 	font-size:15px;
@@ -740,7 +740,6 @@ input:-ms-input-placeholder {
     margin-right: 20px;
     height: 160px;
     width: 160px;
-    border-radius: 50%;
 }
 
 .team2  img{
