@@ -188,3 +188,11 @@ function doesUsernameExist($dbconn, $uname) {
 		header("Location:services.php?success=$success");
 	}
 
+	function authenticate(){
+
+	if (!isset($_SESSION['email']) && !isset($_SESSION['password'])) {
+		header("Location:adminlogin.php");
+	}
+
+}
+
