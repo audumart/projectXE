@@ -7,7 +7,7 @@
 
 	include 'includes/functions.php';
 
-    include 'includes/view.php';
+    
 
 	
 
@@ -16,6 +16,11 @@
 
 
 ?>
+   <!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -28,12 +33,167 @@
 
         <!--For font-awesome css-->
         <link rel="stylesheet" href="../css/font-awesome.min.css" />
-
+        <link rel="stylesheet" href="../css/montserrat-web-font.css" />
         <!--Theme custom css -->
         <link rel="stylesheet" href="../css/mainstyle.css">
 
         <!--Theme Responsive css-->
         <link rel="stylesheet" href="../css/responsive.css" />
+        <script src="assets/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
+
+    <body>
+      <nav class="mainmenu navbar navbar-default navbar-fixed-top">
+          <div class="container">
+
+      <div class="row">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+          <div class="brand-bg">
+                    <a class="navbar-brand" href="index.html"><img src="../images/logo.png" alt="projectXE logo" /></a>
+          </div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a href="#">SERVICES</a></li>
+                        <li><a href="#">CONTACTS</a></li>
+                        <li><a href="#">TEAM</a></li>
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+        </div>
+
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <!--Home page style-->
+        <header class="home-bg">
+        <div class="overlay2-img">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="header-details">
+                            <h1>Welcome to the offical project xe website<i class="fa fa-circle"></i></h1>
+                            <p>"We do not offer free work"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </header>
+
+        <!-- Sections -->
+        <section id="promotion-area" class="sections">
+            <div class="container">
+                <!-- Example row of columns -->
+                <div class="row">
+          <div class="col-sm-4 col-sm-12 col-xs-12">
+            <div class="promotion">
+
+            <h1>Work<br>Accuracy<i class="fa fa-circle"></i></h1>
+            <p>We always deliver our work on time and we make sure you are happy</p>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-sm-12 col-xs-12">
+            <div class="promotion">
+
+            <h1>Affordable<br>Prices<i class="fa fa-circle"></i></h1>
+            <p>Not too cheap, not too costly. We give multiple offers that will suit your needs</p>
+
+            </div>
+          </div>
+
+          <div class="col-sm-4 col-sm-12 col-xs-12">
+            <div class="promotion">
+
+            <h1>Simple<br> payments<i class="fa fa-circle"></i></h1>
+            <p>You’re safe with us. The privacy and security of your financial information is our top priority.</p>
+
+            </div>
+          </div>
+        </section>
+
+        <section id="our-team" class="sections">
+                <div class="container">
+                    <!-- Example row of columns -->
+                    <div class="row">
+                            <div class="team-heading">
+                                <h1>Our Team<i class="fa fa-circle"></i></h1>
+                                <p>They are big but still friendly.</p>
+                            </div>
+
+                    <div class="team-member">
+
+                        <div class="col-sm-4 col-sm-12 col-xs-12">
+                            <div class="team">
+                                <img src="../images/man1.jpg" alt="" />
+                                <div class="team-info">
+                                    <h2>Martins</h2>
+                                    <h5>Full Stack Developer</h5>
+                                    <a target="_blank" href="http://www.instagram.com/martin.chillout">@martin.chillout</a>
+                                    <p>Make sure you don't work on your master branch</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-sm-12 col-xs-12">
+                            <div class="team">
+                                <img src="../images/man2.jpg" alt="" />
+                                <div class="team-info">
+                                    <h2>Joshua</h2>
+                                    <h5>UI/UX Designer</h5>
+                                    <a target="_blank" href="http://www.instagram.com/nnaemeka_umahi">@nnaemeka_umahi</a>
+                                    <p>All about the movies</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 col-sm-12 col-xs-12">
+                            <div class="team">
+                                <img src="../images/man3.jpg" alt="" />
+                                <div class="team-info">
+                                    <h2>Prince</h2>
+                                    <h5>UI/UX Designer</h5>
+                                    <a target="_blank" href="http://www.instagram.com/princeakpa">@princeakpa</a>
+                                    <p>Sleep and sleep</p>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+      </section>
+
+        <!--Footer-->
+        <footer>
+            <div class="container">
+              <div class="row">
+
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <a href="../www/html/terms.html" target="_blank">Terms & Agreements</a>
+                  |
+                  <a href="https://github.com/audumart/projectXE" target="_blank">GitHub Repository</a>
+                  |
+                  <a href="../www/html/about.html" target="_blank">About Us</a>
+
+                  <p>Designed by Team XE</p>
+                </div>
+              </div>
+            </div>
+        </footer>
+        <script src="assets/js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+
+        <script src="assets/js/plugins.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
 
 </html>
