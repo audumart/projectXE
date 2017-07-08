@@ -11,7 +11,7 @@
 
 	include 'includes/functions.php';
 
-	include 'includes/view.php';
+	include 'includes/view1.php';
 
 	$destination = "";
 
