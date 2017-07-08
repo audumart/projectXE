@@ -196,3 +196,57 @@ function doesUsernameExist($dbconn, $uname) {
 
 }
 
+	function editTeamMember($dbconn, $input){
+
+		$stmt = $dbconn->prepare("UPDATE team SET member_name=:mn WHERE member_id =:mi");
+		$stmt->bindParam(":mn", $input['member_name']);
+		$stmt->bindParam(":mi", $input['member_id']);
+		$stmt->execute();
+		$success = "member details edited!";
+		header("Location:members.php?success=$success");
+	}
+
+	function showTeamMember($dbconn){
+		$stmt = $dbconn->prepare("SELECT * FROM team");
+		$stmt->execute();
+		$result = "";
+		
+
+		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+			$member_id = $row['member_id'];
+			$member_name = $row['member_name'];
+			$member_number = $row['member_number'];
+			$member_email = $row['member_email'];
+			$service_id = $row['service_id'];
+
+			
+
+
+
+			$result .="<tr>";
+			
+			$result .="<td>".$member_name."</td>";
+			$result .="<td>".$member_number."</td>";
+			$result .="<td>".$member_email."</td>";
+			$result .="<td>".$service_id."</td>";
+			$result .='<td><img src="'.$row['filepath'].'" height="100" width="100"></td>';
+
+
+
+			$result .= "<td><a href='members.php?action=edit&member_id=$member_id&member_name=$member_name'>edit</a></td>";
+			$result .= "<td><a href='members.php?act=delete&member_id=$member_id'>delete</a><td>";
+			$result .= "<tr>";
+
+		}
+		return $result;
+	}
+
+	function deleteTeamMember($dbconn, $del){
+
+		$stmt = $dbconn->prepare("DELETE FROM team WHERE member_id =:mi");
+		
+		$stmt->bindParam(":mi", $del);
+		$stmt->execute();
+		$success = "member removed!";
+		header("Location:members.php?success=$success");
+	}
