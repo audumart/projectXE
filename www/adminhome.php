@@ -7,6 +7,8 @@
 
 	include 'includes/functions.php';
 
+    authenticate();
+
    
 
 	
