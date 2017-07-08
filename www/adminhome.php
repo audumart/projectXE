@@ -85,7 +85,7 @@
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="header-details">
                             <h1>Welcome Admin you can manage the website from here<i class="fa fa-circle"></i></h1>
-                            <p>"We do not offer free work"</p>
+                            
                         </div>
                     </div>
                 </div>
