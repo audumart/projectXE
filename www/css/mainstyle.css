@@ -226,6 +226,7 @@ Section
 }
 footer {
     padding:40px 0;
+    background-color: #ffffff;
 }
 section .subtitle h5 {
     margin-top: 10px;
@@ -395,7 +396,7 @@ input:-ms-input-placeholder {
 
 .home-bg{
     background: url(../images/header1.jpg) no-repeat center top fixed;
-	   height:600px;
+	   height:400px;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;
@@ -470,7 +471,7 @@ input:-ms-input-placeholder {
 .mainmenu .navbar-nav li a{
 	text-transform:uppercase;
 	font-size:16px;
-	color:#3f968e;
+	color:#2b72b7;
 }
 
 .mainmenu.menu-bg{
@@ -489,7 +490,7 @@ input:-ms-input-placeholder {
 
 
 .home-bg .header-details{
-	padding-top:220px;
+	padding-top:50px;
 	color:#000000;
 }
 
@@ -542,7 +543,7 @@ input:-ms-input-placeholder {
 
 .home-bg .header-details h1 i{
 	font-size:7px;
-	color:#cf4acc;
+	color:#2b72b7;
 }
 
 .about-bg .header-details h1 i{
@@ -727,7 +728,7 @@ input:-ms-input-placeholder {
 
 .team-heading h1 i{
 	font-size:7px;
-	color:#cf4acc;
+	color:#ffec00;
 }
 .team-heading h5{
 	font-size:15px;
@@ -739,7 +740,6 @@ input:-ms-input-placeholder {
     margin-right: 20px;
     height: 160px;
     width: 160px;
-    border-radius: 50%;
 }
 
 .team2  img{
@@ -759,7 +759,7 @@ input:-ms-input-placeholder {
 }
 .team .team-info h5{
 	font-size:14px;
-	color:#cf4acc;
+	color:#f5e40f;
 	margin-bottom:0;
 	font-weight:bold;
 }
