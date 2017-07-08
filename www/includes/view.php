@@ -44,7 +44,7 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="nav navbar-nav pull-right">
 
-                     <li><a href="admin.php">Home</a></li>
+                     <li><a href="adminhome.php">Home</a></li>
                     <li><a href="addmembers.php">Add Team members</a></li>
                     <li><a href="members.php">View team members</a></li>
                     <li><a href="viewservices.php">View services</a></li>
