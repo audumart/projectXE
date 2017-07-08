@@ -7,7 +7,7 @@
 
 	include 'includes/functions.php';
 
-    
+   
 
 	
 
@@ -64,9 +64,11 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav pull-right">
-                        <li><a href="#">SERVICES</a></li>
-                        <li><a href="#">CONTACTS</a></li>
-                        <li><a href="#">TEAM</a></li>
+                        <li><a href="services.php">MANAGE SERVICES</a></li>
+                        <li><a href="viewservices.php">VIEW SERVICES</a></li>
+                        <li><a href="addmembers.php">MANAGE TEAM</a></li>
+                        <li><a href="members.php">VIEW TEAM</a></li>
+                        <li><a href="logout.php">LOGOUT</a></li>
 
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -82,7 +84,7 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="header-details">
-                            <h1>Welcome to the offical project xe website<i class="fa fa-circle"></i></h1>
+                            <h1>Welcome Admin you can manage the website from here<i class="fa fa-circle"></i></h1>
                             <p>"We do not offer free work"</p>
                         </div>
                     </div>
