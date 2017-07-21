@@ -1,5 +1,7 @@
 <?php
 
+	
+
 	function doAdminRegister($dbconn, $input){
 	# hash the password
 	$hash = password_hash($input['password'], PASSWORD_BCRYPT);
@@ -250,3 +252,5 @@ function doesUsernameExist($dbconn, $uname) {
 		$success = "member removed!";
 		header("Location:members.php?success=$success");
 	}
+
+
