@@ -13,6 +13,7 @@
 
 	include 'includes/view1.php';
 
+
 	$destination = "";
 
 	define("MAX_FILE_SIZE", "2097152");
